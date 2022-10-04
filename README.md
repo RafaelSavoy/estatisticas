@@ -5,7 +5,6 @@
   <img src="https://img.shields.io/static/v1?label=Vercel&message=deploy&color=blue&style=for-the-badge&logo=vercel"/>
    <img src="http://img.shields.io/static/v1?label=STATUS&message=CONCLUIDO&color=GREEN&style=for-the-badge"/>
 </p>
-> Status do Projeto:  Concluido :heavy_check_mark:
 
 <img src='https://www.datocms-assets.com/77988/1664896078-graphicgenerator1.png' width='100%'/>
 <img src='https://www.datocms-assets.com/77988/1664896085-graphicgenerator2.png' width='100%'/>
