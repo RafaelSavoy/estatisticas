@@ -1,4 +1,4 @@
-<h1>Gerador de gráfico</h1>
+<h1 >Gerador de gráfico</h1>
 
 <p align="center">
   <img src="https://img.shields.io/static/v1?label=REACT&message=framework&color=blue&style=for-the-badge&logo=REACT"/>
