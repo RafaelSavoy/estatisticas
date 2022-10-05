@@ -13,7 +13,7 @@ interface GraphicInfos {
 const GraphicManager = () => {
   const [graphicInfos, setGraphicInfos] = useState<GraphicInfos>({
     graphicName: "",
-    graphicData: [],
+    graphicData: [["Item 1",50],["Item 2",50],["Item 3",50],["Item 4",50],["Item 5",50],["Item 6",50]],
     graphicStatus: false,
   });
 
