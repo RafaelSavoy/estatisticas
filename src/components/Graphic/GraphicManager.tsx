@@ -41,7 +41,7 @@ const GraphicManager = () => {
       ...graphicInfos,
       graphicData: [
         ...graphicInfos.graphicData,
-        [itemName == "" ? "Sem nome" : itemName, quantity],
+        [itemName == "" ? "Sem" : itemName, quantity],
       ],
     });
   }
