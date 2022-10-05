@@ -22,17 +22,11 @@ const Graphic = ({ name, data, backToInput }: GraphicInfos) => {
             fontName: "Poppins",
           },
           backgroundColor: "transparent",
-          legend: { position: "top" },
+          legend: { position: "bottom" },
         }}
         width={"100%"}
-        height={"100%"}
+        height={"100vh"}
       />
-      <Button
-        style={{ alignSelf: "center", margin: "10px" }}
-        onClick={backToInput}
-      >
-        Voltar
-      </Button>
     </GraphicContainer>
   );
 };

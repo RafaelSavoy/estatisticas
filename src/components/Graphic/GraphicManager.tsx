@@ -20,7 +20,15 @@ const GraphicManager = () => {
   function removeData(index: number): void {
     const datas = [...graphicInfos.graphicData];
     datas.splice(index, 1);
-    setGraphicInfos({ ...graphicInfos, graphicData: datas });
+    if (graphicInfos.graphicData.length <= 1) {
+      setGraphicInfos({
+        ...graphicInfos,
+        graphicData: datas,
+        graphicStatus: false,
+      });
+    } else {
+      setGraphicInfos({ ...graphicInfos, graphicData: datas });
+    }
   }
   function setGraphicName(name: string) {
     setGraphicInfos({ ...graphicInfos, graphicName: name });
@@ -38,7 +46,7 @@ const GraphicManager = () => {
     });
   }
   function clearData(): void {
-    setGraphicInfos({ ...graphicInfos, graphicData: [] });
+    setGraphicInfos({ ...graphicInfos, graphicData: [], graphicStatus: false });
   }
   function toggleGraphicStatus(): void {
     setGraphicInfos({
@@ -47,13 +55,33 @@ const GraphicManager = () => {
     });
   }
   function generateGraphic(): void {
-    console.log(graphicInfos.graphicData);
-    toggleGraphicStatus();
+    setGraphicInfos({ ...graphicInfos, graphicStatus: true });
   }
 
   return (
     <>
       <StyledSection>
+        <Container>
+          <Title>Gerador de gráfico</Title>
+          <InputGroup>
+            <label>Título</label>
+            <input
+              type="text"
+              name="graphicName"
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setGraphicName(e.target.value)
+              }
+              value={graphicInfos.graphicName}
+            />
+          </InputGroup>
+          <GraphicData setGraphicName={setGraphicName} addData={addData} />
+          <GraphicDataTable
+            data={graphicInfos.graphicData}
+            removeData={removeData}
+            clearData={clearData}
+            generateGraphic={generateGraphic}
+          />
+        </Container>
         {graphicInfos.graphicStatus ? (
           <Graphic
             name={graphicInfos.graphicName}
@@ -61,27 +89,7 @@ const GraphicManager = () => {
             backToInput={toggleGraphicStatus}
           />
         ) : (
-          <Container>
-            <Title>Gerador de gráfico</Title>
-            <InputGroup>
-              <label>Título</label>
-              <input
-                type="text"
-                name="graphicName"
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                  setGraphicName(e.target.value)
-                }
-                value={graphicInfos.graphicName}
-              />
-            </InputGroup>
-            <GraphicData setGraphicName={setGraphicName} addData={addData} />
-            <GraphicDataTable
-              data={graphicInfos.graphicData}
-              removeData={removeData}
-              clearData={clearData}
-              generateGraphic={generateGraphic}
-            />
-          </Container>
+          ""
         )}
       </StyledSection>
     </>

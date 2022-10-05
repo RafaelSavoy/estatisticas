@@ -5,10 +5,10 @@ export const StyledSection = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  flex-direction: column;
+  min-height: calc(84vh - 43px);
   max-width: 1000px;
-  margin: 0 auto;
-  overflow: hidden;
+  margin: 25px auto 0 auto;
 `;
 export const Button = styled.button`
   padding: 5px;
@@ -26,7 +26,7 @@ export const Button = styled.button`
 
 export const Container = styled.div`
   width: 90%;
-  height: 70vh;
+  min-height: 70vh;
   border-radius: 5px;
 `;
 
@@ -122,11 +122,16 @@ export const InputDatas = styled(InputGroup)`
   & > * {
     flex: auto;
   }
+  @media (max-width: 500px) {
+    flex-direction: column;
+    & > * {
+      width: 100%;
+    }
+  }
 `;
 
 export const GraphicContainer = styled.div`
   width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   animation: ${fadeIn} 1s;
